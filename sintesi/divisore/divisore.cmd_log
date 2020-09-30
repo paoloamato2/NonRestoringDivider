@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "C:/Users/amato/OneDrive/Desktop/ASE/tesina/tesina paolo/esercizio 10/sintesi/divisore/divisore.xst" -ofn "C:/Users/amato/OneDrive/Desktop/ASE/tesina/tesina paolo/esercizio 10/sintesi/divisore/divisore.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc "C:/Users/amato/OneDrive/Desktop/ASE/tesina/tesina paolo/esercizio 10/sintesi/Nexys4DDR-100T.ucf" -p xc7a100t-csg324-3 "divisore.ngc" divisore.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o divisore_map.ncd divisore.ngd divisore.pcf 
+par -w -intstyle ise -ol high -mt off divisore_map.ncd divisore.ncd divisore.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml divisore.twx divisore.ncd -o divisore.twr divisore.pcf 
+bitgen -intstyle ise -f divisore.ut divisore.ncd 

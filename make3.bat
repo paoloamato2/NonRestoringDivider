@@ -1,0 +1,7 @@
+ghdl --clean
+ghdl -a ff_t.vhdl
+ghdl -a counter_mod4.vhdl
+ghdl -a counter_mod4_tb.vhdl
+ghdl -e counter_mod4_tb
+ghdl -r counter_mod4_tb --vcd=out3.vcd
+gtkwave out3.vcd
